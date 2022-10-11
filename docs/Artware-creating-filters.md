@@ -2,6 +2,7 @@
 
 Assuming you have an artware.js project setup, start by creating a new JavaScript file in the `/js/filters` directory which looks like this:
 ```js
+/* global app */
 window.filters.EXAMPLE = {
   name: 'my example filter',
   menu: 'Edit',
