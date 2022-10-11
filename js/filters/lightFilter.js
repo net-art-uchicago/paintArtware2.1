@@ -10,9 +10,9 @@ window.filters.lightFilter = {
       const g = data[i + 1]
       const b = data[i + 2]
 
-      let brightR = brightness * r
-      let brightG = brightness * g
-      let brightB = brightness * b
+      const brightR = brightness * r
+      const brightG = brightness * g
+      const brightB = brightness * b
 
       data[i] = brightR
       data[i + 1] = brightG
