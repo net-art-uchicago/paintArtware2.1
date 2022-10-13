@@ -6,7 +6,8 @@
   "tools": [
     "pencil",
     "oscCircles",
-    "zoom"
+    "zoom",
+    "platformer"
   ],
   "filters": [
     "invert"
