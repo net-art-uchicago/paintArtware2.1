@@ -4,10 +4,12 @@
     "export"
   ],
   "tools": [
-    "pencil"
+    "pencil",
+    "markerBrush"
   ],
   "filters": [
-    "invert"
+    "invert",
+    "roseGold"
   ],
   "options": [
     "randomDog",
