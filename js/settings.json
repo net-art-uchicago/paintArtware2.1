@@ -5,7 +5,8 @@
   ],
   "tools": [
     "pencil",
-    "oscCircles"
+    "oscCircles",
+    "randomShape"
   ],
   "filters": [
     "invert", 
