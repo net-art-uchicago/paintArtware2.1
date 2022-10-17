@@ -5,7 +5,11 @@
   ],
   "tools": [
     "pencil",
+<<<<<<< HEAD
     "markerBrush"
+=======
+    "oscCircles"
+>>>>>>> 9f3ac3d0f9459ba142d45a8d430e3e55e1251c4b
   ],
   "filters": [
     "invert",
