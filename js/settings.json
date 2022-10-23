@@ -4,7 +4,9 @@
     "export"
   ],
   "tools": [
-    "pencil"
+    "pencil",
+    "rainbow",
+    "rainbowWave"
   ],
   "filters": [
     "invert",
