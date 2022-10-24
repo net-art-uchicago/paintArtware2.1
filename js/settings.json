@@ -5,8 +5,7 @@
   ],
   "tools": [
     "pencil",
-    "oscCircles",
-    "heart"
+    "oscCircles"
   ],
   "filters": [
     "invert",
