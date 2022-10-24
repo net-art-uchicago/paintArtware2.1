@@ -5,11 +5,19 @@
   ],
   "tools": [
     "pencil",
+    "eraser",
+    "randAlpha",
     "oscCircles"
   ],
   "filters": [
     "invert",
-    "pink"
+    "opacity",
+    "pink",
+    "zoom"
+  ],
+  "filters": [
+    "invert",
+    "sepia"
   ],
   "options": [
     "randomDog",
