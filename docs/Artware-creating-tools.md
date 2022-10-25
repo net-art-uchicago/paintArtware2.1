@@ -66,10 +66,31 @@ events: {
     if (self.state.selected && self.state.mousePressed) {
       const mouse = app.eventToMouse(e)
       // draw a box
-      app.ctx.rect(mouse.x, mouse.y, 10, 10)
+      app.ctx.fillRect(mouse.x, mouse.y, 10, 10)
     }
   }
 }
 ```
 
 These event functions will give you access to two objects via it's arguments. The first (which I've defined as `e` above) is the standard [event object](https://developer.mozilla.org/en-US/docs/Web/API/Event) which is typically passed into any browser [window event](https://developer.mozilla.org/en-US/docs/Web/Events), the second (which I've defined as `self` above) is a reference to the tool itself. You can use this to access your tool's state like `self.state` or any other property in your tool like `self.icon` for example.
+
+### Canvas API considerations
+
+While you can technically use this function to execute any arbitrary code when the user selects your tool and triggers any of the events you defined, the purpose of these "tool" objects is to produce some change (add or remove pixels) in the canvas, which can be done using the Canvas API directly (see MDN's docs to learn more about the Web's [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)).
+
+You may want to do things like change the app's [fill](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle) or [stroke](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle) color by reassigning `app.ctx.fillStyle` and `app.ctx.strokeStyle` to new values, or change other global properties of the canvas like it's [alpha](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalAlpha) value or [composite style](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation) by reassigning `app.ctx.globalCompositeOperation` or `app.ctx.globalAlpha`. By default these chnages will remain set on the canvas even after the user chooses another tool, which means it will unintentionally effect someone else's tool (unless they too have reassigned the same property in their logic). To avoid this side-effect, we can use the Canvas API's [save / restore](https://www.tutorialspoint.com/html5/canvas_states.htm) state methods. Inside ur mousemove function's conditional statement place a call to `app.ctx.save()` somewhere before you reassign one of the canvas's global properties, then after the rest of your operations call `app.ctx.restore()` to restore the canvas's global properties to their prior settings:
+
+```js
+  mousemove: function (e, self) {
+    if (self.state.selected && self.state.mousePressed) {
+      const mouse = app.eventToMouse(e)
+      // save the current state of the canvas's global properties
+      app.ctx.save()
+      // run your logic
+      app.ctx.fillStyle = 'red'
+      app.ctx.fillRect(mouse.x, mouse.y, 10, 10)
+      // return the canvas's state to what it was when we saved it
+      app.ctx.restore()
+    }
+  }
+```

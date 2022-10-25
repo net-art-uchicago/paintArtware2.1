@@ -11,6 +11,19 @@
   "filters": [
     "invert", 
     "lightFilter"
+    "rainbow",
+    "oscCircles",
+    "gradientBrush",
+    "eraser",
+    "randAlpha",
+    "oscCircles"
+  ],
+  "filters": [
+    "invert",
+    "opacity",
+    "pink",
+    "zoom",
+    "sepia"
   ],
   "options": [
     "randomDog",
