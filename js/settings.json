@@ -4,11 +4,13 @@
     "export"
   ],
   "tools": [
-    "pencil"
+    "pencil",
+    "pencil_icon"
   ],
   "filters": [
     "invert",
-    "randomPixels"
+    "randomPixels",
+    "swapPixels"
   ],
   "options": [
     "randomDog",
