@@ -142,7 +142,7 @@ class Artware {
     this.canvas = document.createElement('canvas')
     this.canvas.width = width
     this.canvas.height = height
-    this.ctx = this.canvas.getContext('2d', { willReadFrequently: false })
+    this.ctx = this.canvas.getContext('2d', { willReadFrequently: true })
     main.appendChild(this.canvas)
     return { canvas: this.canvas, ctx: this.ctx }
   }

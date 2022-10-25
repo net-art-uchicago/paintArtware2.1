@@ -8,15 +8,13 @@
     "eraser",
     "randAlpha",
     "oscCircles",
-    "platfomer"
+    "zoom",
+    "platformer"
   ],
   "filters": [
     "invert",
     "opacity",
     "pink",
-    "zoom"
-  ],
-  "filters": [
     "invert",
     "sepia"
   ],
