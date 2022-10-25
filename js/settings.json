@@ -5,6 +5,12 @@
   ],
   "tools": [
     "pencil",
+    "oscCircles",
+    "randomShape"
+  ],
+  "filters": [
+    "invert", 
+    "lightFilter"
     "rainbow",
     "oscCircles",
     "gradientBrush",
