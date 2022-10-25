@@ -1,6 +1,6 @@
 /* global app */
-window.tools.rainbow = {
-  name: 'rainbow',
+window.tools.rainbowBeads = {
+  name: 'rainbowBeads',
   icon: '/images/rainbow-icon.png',
   state: {
     selected: false,
