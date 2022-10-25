@@ -20,7 +20,8 @@
   ],
   "filters": [
     "invert",
-    "sepia"
+    "sepia",
+    "dark"
   ],
   "options": [
     "randomDog",
