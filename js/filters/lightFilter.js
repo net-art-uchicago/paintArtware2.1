@@ -1,3 +1,4 @@
+/* global app */
 window.filters.lightFilter = {
   name: 'Light Filter',
   menu: 'Edit',
