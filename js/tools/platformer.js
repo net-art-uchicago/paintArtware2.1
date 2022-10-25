@@ -41,10 +41,12 @@ window.tools.platformer = {
       }
 
       function platformerLoop (self) {
+        /*
         console.log('plat loop',
           self.state.xPos, self.state.yPos,
           self.state.selected, self.state.yVel,
           checkGrounded(self), self.state.jumpFlag)
+          */
         if (!self.state.selected) {
           return
         }
@@ -63,16 +65,19 @@ window.tools.platformer = {
         const grounded = checkGrounded(self)
 
         if (self.state.jumpFlag && grounded) {
-          self.state.yVel = -5
+          self.state.yVel = -10
         }
         self.state.jumpFlag = false
 
         if (self.state.yVel < 0) {
           self.state.yPos += self.state.yVel
         }
-        if (!grounded && self.state.yVel < self.state.maxGrav) {
+        if ((!grounded && self.state.yVel < self.state.maxGrav) ||
+          (grounded && self.state.yVel < 0)) {
           self.state.yVel++
         }
+
+        self.state.xPos += self.state.xVel
 
         app.ctx.rect(self.state.xPos - 2, self.state.yPos - 2, 3, 3)
         app.ctx.fill()
@@ -82,21 +87,25 @@ window.tools.platformer = {
       // A better option would be to place this in the framework setup
       if (self.state.setup === false) {
         self.state.setup = true
-        console.log('hllow')
         setInterval(platformerLoop, 2, self)
       }
     },
-    keydown: function (e, self) {
+    keypress: function (e, self) {
       console.log('user pressed key', e.code)
-      if (e.code === 'ArrowLeft') {
-        self.state.xPos -= 1
+      if (e.code === 'KeyA') {
+        self.state.xVel = -4
       }
-      if (e.code === 'ArrowRight') {
-        self.state.xPos += 1
+      if (e.code === 'KeyD') {
+        self.state.xVel = 4
       }
       if (e.code === 'Space') {
-        console.log('hi')
         self.state.jumpFlag = true
+      }
+    },
+    keyup: function (e, self) {
+      console.log('user released key', e.code)
+      if (e.code === 'KeyA' || e.code === 'KeyD') {
+        self.state.xVel = 0
       }
     }
   }
