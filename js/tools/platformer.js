@@ -96,7 +96,7 @@ window.tools.platformer = {
       }
       if (e.code === 'Space') {
         console.log('hi')
-        self.jumpFlag = true
+        self.state.jumpFlag = true
       }
     }
   }
