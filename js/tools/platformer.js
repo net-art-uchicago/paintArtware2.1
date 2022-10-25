@@ -1,7 +1,7 @@
 /* global app */
 window.tools.platformer = {
   name: 'platformer',
-  icon: '/images/zoom-icon.png',
+  icon: '/images/platformer-icon.png',
   state: {
     selected: false,
     mousePressed: false,
