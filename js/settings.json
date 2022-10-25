@@ -12,7 +12,8 @@
     "randAlpha",
     "oscCircles",
     "zoom",
-    "platformer"
+    "platformer",
+    "topdown"
   ],
   "filters": [
     "invert",
