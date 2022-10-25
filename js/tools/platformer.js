@@ -65,7 +65,7 @@ window.tools.platformer = {
         const grounded = checkGrounded(self)
 
         if (self.state.jumpFlag && grounded) {
-          self.state.yVel = -10
+          self.state.yVel = -15
         }
         self.state.jumpFlag = false
 
