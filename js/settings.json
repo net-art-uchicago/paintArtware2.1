@@ -1,33 +1,28 @@
 {
-  "version": 2.1,
-  "functions": [
-    "export"
-  ],
-  "tools": [
-    "pencil",
-    "oscCircles",
-    "randomShape"
-  ],
-  "filters": [
-    "invert", 
-    "lightFilter"
-    "rainbow",
-    "oscCircles",
-    "gradientBrush",
-    "eraser",
-    "randAlpha",
-    "oscCircles"
-  ],
-  "filters": [
-    "invert",
-    "opacity",
-    "pink",
-    "zoom",
-    "sepia"
-  ],
-  "options": [
-    "randomDog",
-    "lineWidth",
-    "randomColor"
-  ]
+    "version": 2.1,
+    "functions": [
+      "export"
+    ],
+    "tools": [
+      "pencil",
+      "rainbow",
+      "randomShape",
+      "oscCircles",
+      "gradientBrush",
+      "eraser",
+      "randAlpha",
+      "zoom"
+    ],
+    "filters": [
+      "invert",
+      "opacity",
+      "pink",
+      "sepia",
+      "lightFilter"
+    ],
+    "options": [
+      "randomDog",
+      "lineWidth",
+      "randomColor"
+    ]
 }

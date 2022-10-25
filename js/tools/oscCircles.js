@@ -19,7 +19,7 @@ window.tools.oscCircles = {
         const mouse = app.eventToMouse(e)
         const radius = Math.abs(Math.sin(Date.now() / 500) * 50)
         app.ctx.beginPath()
-        app.ctx.arc(mouse.x, mouse.y, radius, 0, 2 * Math.PI, true)
+        app.ctx.arc(mouse.x, mouse.y, radius, 0, 2 * Math.PI, false)
         app.ctx.fill()
         app.ctx.fillStyle = 'white'
         // app.ctx.lineWidth = 5

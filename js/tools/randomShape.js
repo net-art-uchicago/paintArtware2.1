@@ -24,12 +24,14 @@ window.tools.randomShape = {
           app.ctx.fill()
           app.ctx.fillStyle = 'blue'
           app.ctx.stroke()
+          app.ctx.restore()
         }
         else if (randomNumber === 1) {
           app.ctx.rect(mouse.x, mouse.y, (size * 2), (size * 2))
           app.ctx.fill()
           app.ctx.fillStyle = 'red'
           app.ctx.stroke()
+          app.ctx.restore()
         }
         else {
           app.ctx.moveTo(mouse.x + (size / 10) + 50, mouse.y + size / 10)
@@ -38,6 +40,7 @@ window.tools.randomShape = {
           app.ctx.fill()
           app.ctx.fillStyle = 'green'
           app.ctx.stroke()
+          app.ctx.restore()
         }
       }
     }
