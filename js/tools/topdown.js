@@ -1,7 +1,7 @@
 /* global app */
 window.tools.topdown = {
   name: 'topdown',
-  icon: '/images/platformer-icon.png',
+  icon: '/images/top-down-icon.png',
   state: {
     selected: false,
     mousePressed: false,
@@ -25,21 +25,6 @@ window.tools.topdown = {
       }
     },
     mousemove: function (e, self) {
-      function checkGrounded (self) {
-        if (self.state.yPos >= app.canvas.height - 5) {
-          return true
-        }
-        const floorPixel = app.ctx.getImageData(self.state.xPos, self.state.yPos + 2, 1, 1).data
-        if (
-          floorPixel[0] < 120 &&
-          floorPixel[1] < 120 &&
-          floorPixel[2] < 120 &&
-          floorPixel[3] > 200) {
-          return true
-        }
-        return false
-      }
-
       function platformerLoop (self) {
         /*
         console.log('plat loop',
