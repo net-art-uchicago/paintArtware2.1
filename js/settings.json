@@ -13,7 +13,9 @@
     "eraser",
     "randAlpha",
     "oscCircles",
-    "zoom"
+    "zoom",
+    "platformer",
+    "topdown"
   ],
   "filters": [
     "invert",
